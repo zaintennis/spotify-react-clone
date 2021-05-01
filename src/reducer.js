@@ -4,7 +4,7 @@ export const initialState = {
     playing: false,
     item: null,
     //remove after developing //
-    token: 'BQDlQCWwJ_3n147ehb4vGeRTMIebWDpZhvknJdiVEzJPpX1j3gZ1889jWjLd-Vuxz30XgDbtFCk15f3QX3fg2lL1CgSTZXoPJVDD50Lyu6NHgwm26mKbV_K6nREVItaVdDAWyCq2Ys-J189IFnugZBYZNkjH',
+    //token: 'BQDlQCWwJ_3n147ehb4vGeRTMIebWDpZhvknJdiVEzJPpX1j3gZ1889jWjLd-Vuxz30XgDbtFCk15f3QX3fg2lL1CgSTZXoPJVDD50Lyu6NHgwm26mKbV_K6nREVItaVdDAWyCq2Ys-J189IFnugZBYZNkjH',
 };
 
 // action is how we manipulate what the datalayer looks like; set user, set item.. //
@@ -17,13 +17,25 @@ const reducer = (state, action) => {
         case 'SET_USER':
             return {
                 ...state,
-                user: action.user
+                user: action.user,
              };
 
         case 'SET_TOKEN':
             return {
                 ...state,
-                token: action.token
+                token: action.token,
+            }
+
+        case 'SET_PLAYLISTS':
+            return {
+                ...state,
+                playlists: action.playlists,
+            }
+
+        case 'SET_DISCOVER_WEEKLY':
+            return {
+                ...state,
+                discover_weekly: action.discover_weekly,
             }
         default:
             return state;
